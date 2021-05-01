@@ -12,6 +12,7 @@ X = dataset.iloc[:, :-1].values
 Y = dataset.iloc[:, 4].values
 
 # Encoding Categorical data
+# https://stackoverflow.com/questions/54345667/onehotencoder-categorical-features-deprecated-how-to-transform-specific-column
 ct = ColumnTransformer([("State", OneHotEncoder(), [3])], remainder="passthrough")
 X = ct.fit_transform(X)
 
